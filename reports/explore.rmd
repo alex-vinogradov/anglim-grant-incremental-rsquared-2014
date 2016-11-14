@@ -1,4 +1,4 @@
-`r opts_knit$set(root.dir='..')`      
+```{r setup} knitr::opts_knit$set(root.dir='..') ``` 
 
 # Initialise Project
 ```{r}
