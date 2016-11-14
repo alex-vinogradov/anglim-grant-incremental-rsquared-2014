@@ -10,7 +10,7 @@ boot_theta <- summary(fit_facets)$r.square - summary(fit_factors)$r.square
 
 # Specification
 specification <- list()
-specification$test <- FALSE
+specification$test <- TRUE ## set FALSE to run not in test mode
 if (specification$test) {
     specification$simulations <- 20 # B: (integer) number of simulated datasets (either bootstraps or simulations)
 } else {
@@ -22,7 +22,7 @@ generator_function <- c(generated_simulated_real_dataset, generate_simulated_dat
 specification$theta <- c(.1508342, 0)
 specification$n <- c(50, 100, 200, 1000)
 specification$estimator <- c('olkinpratt', 'ezekiel',  'rsquare', 
-                             'stepwise05', 'stepwise0083', 'bestfacet', ) # c('stepwise05', 'stepwise0083', 'bestfacet', 'adjrsquare')
+                             'stepwise05', 'stepwise0083', 'bestfacet') # c('stepwise05', 'stepwise0083', 'bestfacet', 'adjrsquare')
 estimator_function <- c(estimator_adj_r_squared_olkinpratt, estimator_adj_r_squared_ezekiel, estimator_r_square,
                         estimator_stepwise05, estimator_stepwise0083, estimator_bestfacet)
 specification$seed <- 1234
