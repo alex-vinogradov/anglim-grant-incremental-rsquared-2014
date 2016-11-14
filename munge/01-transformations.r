@@ -29,7 +29,7 @@ score_test <- function(meta_data, case_data, subscale_name='subscale_name', id='
     scoring_key <- create_scoring_key(meta_data[, id], 
                                   meta_data[ ,subscale_name],  
                                   meta_data[ ,reverse])
-    scored <- score.items(scoring_key, case_data[,rownames(scoring_key)])
+    scored <- scoreItems(scoring_key, case_data[,rownames(scoring_key)])
     scored$key <- scoring_key
     scored
 }
